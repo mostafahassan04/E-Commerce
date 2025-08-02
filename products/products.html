@@ -9,10 +9,19 @@
     <link rel="stylesheet" href="products.css">
 </head>
 <body>
-    <header class="header">
-        <h1 class="text-center my-4 text-dark">Products</h1>
-        <button id="logoutButton" class="btn btn-outline-light">Logout <i class="fa-solid fa-right-from-bracket"></i></button>
-    </header>
+<header class="header d-flex justify-content-between align-items-center px-4 py-2 bg-dark">
+    <h1 class="text-center text-light m-0">Products</h1>
+    
+    <div class="d-flex gap-2">
+        <button id="cartButton" class="btn btn-outline-light">
+            <i class="fa-solid fa-cart-shopping me-1"></i> Cart
+        </button>
+        
+        <button id="logoutButton" class="btn btn-outline-light">
+            Logout <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
+    </div>
+</header>
     <div class="container">
 
         <div class="dropdown mb-5">
