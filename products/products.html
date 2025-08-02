@@ -9,7 +9,46 @@
     <link rel="stylesheet" href="products.css">
 </head>
 <body>
-    
+    <header class="header">
+        <h1 class="text-center my-4 text-dark">Products</h1>
+        <button id="logoutButton" class="btn btn-outline-light">Logout <i class="fa-solid fa-right-from-bracket"></i></button>
+    </header>
+    <div class="container">
+
+        <div class="dropdown mb-5">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                Category
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+                <!-- <li><a class="dropdown-item" href="#" data-category="all">All</a></li>
+                <li><a class="dropdown-item" href="#" data-category="electronics">Electronics</a></li>
+                <li><a class="dropdown-item" href="#" data-category="clothing">Clothing</a></li>
+                <li><a class="dropdown-item" href="#" data-category="home">Home</a></li> -->
+            </ul>
+        </div>
+        <div class="row" id="productList">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden d-none">Loading...</span>
+            </div>
+        </div>
+        <div class="modal fade" id="productDetailsModal" tabindex="-1" aria-labelledby="productDetailsLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="productDetailsLabel"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="" class="card-img-top fit-cover" alt="">
+                            <p class="modal-description"></p>
+                            <p>Rating: <span class="modal-rating"></span> <i class="fa-solid fa-star text-warning"></i> (<span class="modal-rating-count"></span>)</p>
+                            <p>Price: <strong class="modal-price"></strong></p>
+                            <p>Category: <strong class="modal-category"></strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/all.min.js"></script>
     <script src="products.js"></script>
