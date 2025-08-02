@@ -5,7 +5,7 @@
   <title>Authentication Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/all.min.css">
+  <link rel="stylesheet" href="../css/all.min.css">
   <link rel="stylesheet" href="auth.css">
 </head>
 <body>
@@ -17,26 +17,34 @@
             <button id="showSignUp" class="btn btn-primary me-2" type="button">Sign Up</button>
             <button id="showLogin" class="btn btn-outline-primary" type="button">Login</button>
           </div>
-          
           <div id="signUpFormContainer">
             <h2 class="text-center mb-4">Sign Up</h2>
             <form id="signupForm">
               <div class="mb-3">
-                <label for="username" class="form-label">Email or Username</label>
-                <input type="text" class="form-control" id="username" required>
+                <label for="signupEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="signupEmail" required>
+              </div>
+              <div class="mb-3">
+                <label for="signupUsername" class="form-label">Username</label>
+                <input type="text" class="form-control" id="signupUsername" required>
               </div>
               <div class="mb-3 position-relative">
-                <label for="password" class="form-label">Password</label>
+                <label for="signupPassword" class="form-label">Password</label>
                 <div class="input-group">
-                  <input type="password" class="form-control" id="password" required>
-                  <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                  <input type="password" class="form-control" id="signupPassword" required>
+                  <button class="btn btn-outline-secondary" type="button" id="toggleSignupPassword">
                     <i class="fas fa-eye"></i>
                   </button>
                 </div>
               </div>
-              <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="isAdmin">
-                <label class="form-check-label" for="isAdmin">Admin?</label>
+              <div class="mb-3 position-relative">
+                <label for="signupRepeatPassword" class="form-label">Repeat Password</label>
+                <div class="input-group">
+                  <input type="password" class="form-control" id="signupRepeatPassword" required>
+                  <button class="btn btn-outline-secondary" type="button" id="toggleSignupRepeatPassword">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </div>
               </div>
               <button type="submit" class="btn btn-primary w-100 mt-3">Sign Up</button>
             </form>
@@ -44,17 +52,14 @@
               <p>Already have an account? <a href="#" id="loginLink">Login</a></p>
             </div>
           </div>
+
           
           <div id="loginFormContainer" style="display:none;">
             <h2 class="text-center mb-4">Login</h2>
             <form id="loginForm">
               <div class="mb-3">
-                <label for="loginEmail" class="form-label">Email</label>
-                <input type="email" class="form-control" id="loginEmail" required>
-              </div>
-              <div class="mb-3">
-                <label for="loginUsername" class="form-label">UserName</label>
-                <input type="text" class="form-control" id="loginUsername" required>
+                <label for="loginIdentifier" class="form-label">Email or Username</label>
+                <input type="text" class="form-control" id="loginIdentifier" required>
               </div>
               <div class="mb-3 position-relative">
                 <label for="loginPassword" class="form-label">Password</label>
@@ -65,14 +70,9 @@
                   </button>
                 </div>
               </div>
-              <div class="mb-3 position-relative">
-                <label for="loginRepeatPassword" class="form-label">Repeat Password</label>
-                <div class="input-group">
-                  <input type="password" class="form-control" id="loginRepeatPassword" required>
-                  <button class="btn btn-outline-secondary" type="button" id="toggleLoginRepeatPassword">
-                    <i class="fas fa-eye"></i>
-                  </button>
-                </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="loginIsAdmin">
+                <label class="form-check-label" for="loginIsAdmin">Admin?</label>
               </div>
               <button type="submit" class="btn btn-primary w-100 mt-3">Login</button>
             </form>
@@ -84,7 +84,8 @@
       </div>
     </div>
   </div>
-    <script src="../js/all.min.js"></script>
+  <script src="../js/all.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
   <script src="auth.js"></script>
 </body>
+</html>

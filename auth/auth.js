@@ -4,24 +4,25 @@ document.addEventListener("DOMContentLoaded", function () {
   const showSignUpBtn = document.getElementById("showSignUp");
   const showLoginBtn = document.getElementById("showLogin");
   const loginLink = document.getElementById("loginLink");
-  const signUpLink = document.getElementById("signUpLink");
+  if (showSignUpBtn) {
+    showSignUpBtn.onclick = function () {
+      signUpContainer.style.display = "block";
+      loginContainer.style.display = "none";
+    };
+  }
+  if (showLoginBtn) {
+    showLoginBtn.onclick = function () {
+      signUpContainer.style.display = "none";
+      loginContainer.style.display = "block";
+    };
+  }
+  if (loginLink) {
+    loginLink.onclick = function (e) {
+      e.preventDefault();
+      showLoginBtn.click();
+    };
+  }
 
-  showSignUpBtn.onclick = function () {
-    signUpContainer.style.display = "";
-    loginContainer.style.display = "none";
-  };
-  showLoginBtn.onclick = function () {
-    signUpContainer.style.display = "none";
-    loginContainer.style.display = "";
-  };
-  loginLink.onclick = function (e) {
-    e.preventDefault();
-    showLoginBtn.click();
-  };
-  signUpLink.onclick = function (e) {
-    e.preventDefault();
-    showSignUpBtn.click();
-  };
   function setupPasswordToggle(inputId, btnId) {
     const passwordInput = document.getElementById(inputId);
     const toggleBtn = document.getElementById(btnId);
@@ -34,26 +35,20 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleIcon.classList.toggle("fa-eye-slash");
     });
   }
-  setupPasswordToggle("password", "togglePassword");
+  setupPasswordToggle("signupPassword", "toggleSignupPassword");
+  setupPasswordToggle("signupRepeatPassword", "toggleSignupRepeatPassword");
   setupPasswordToggle("loginPassword", "toggleLoginPassword");
-  setupPasswordToggle("loginRepeatPassword", "toggleLoginRepeatPassword");
+
   function isPasswordValid(password) {
     return /^(?=.*[A-Z])(?=.*\d).{8,}$/.test(password);
   }
-
-  function doPasswordsMatch(passId, repeatId) {
-    const pass = document.getElementById(passId);
-    const repeat = document.getElementById(repeatId);
-    return pass && repeat && pass.value === repeat.value;
-  }
-
-  const loginForm = document.getElementById("loginForm");
-  if (loginForm) {
-    loginForm.addEventListener("submit", function (e) {
-      const password = document.getElementById("loginPassword").value;
-      const repeatPassword = document.getElementById(
-        "loginRepeatPassword"
-      ).value;
+  const signupForm = document.getElementById("signupForm");
+  if (signupForm) {
+    signupForm.addEventListener("submit", function (e) {
+      const email = document.getElementById("signupEmail").value;
+      const username = document.getElementById("signupUsername").value;
+      const password = document.getElementById("signupPassword").value;
+      const repeatPassword = document.getElementById("signupRepeatPassword").value;
 
       if (!isPasswordValid(password)) {
         alert(
@@ -67,21 +62,22 @@ document.addEventListener("DOMContentLoaded", function () {
         e.preventDefault();
         return;
       }
+      const user = { email, username, password };
+      localStorage.setItem("user", JSON.stringify(user));
     });
   }
+  const loginForm = document.getElementById("loginForm");
+  if (loginForm) {
+    loginForm.addEventListener("submit", function (e) {
+      const identifier = document.getElementById("loginIdentifier").value;
+      const password = document.getElementById("loginPassword").value;
 
-  const signupForm = document.getElementById("signupForm");
-  if (signupForm) {
-    signupForm.addEventListener("submit", function (e) {
-      const password = document.getElementById("password").value;
-
-      if (!isPasswordValid(password)) {
-        alert(
-          "Password must be at least 8 characters, contain a capital letter and a digit."
-        );
+      if (!identifier || !password) {
+        alert("Please enter your email/username and password.");
         e.preventDefault();
         return;
       }
+      const loginInfo = { identifier, password };
+      localStorage.setItem("loginInfo", JSON.stringify(loginInfo));
     });
-  }
-});
+  }});

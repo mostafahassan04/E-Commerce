@@ -85,3 +85,7 @@ function showProductDetails(productId) {
         alert('Product not found!');
     }
 }
+
+document.getElementById("logoutButton").addEventListener("click", function() {
+    window.location.href = "../auth/auth.html";
+});
