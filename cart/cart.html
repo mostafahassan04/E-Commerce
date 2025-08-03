@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,34 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/all.min.css">
     <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="../products/products.css">
 </head>
+
 <body>
-    
+    <div class="d-flex">
+        <div class="container-fluid row gx-4 gy-4 container" id="cartItems">
+        </div>
+        <div class="container-fluid d-flex flex-column align-items-center" id="checkoutContainer">
+            <h2 class="text-center mb-5">Checkout</h2>
+            <h5 class="text-center mb-4 subtotal"></h5>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="promoCode" placeholder="">
+                <label for="promoCode">Promo Code</label>
+            </div>
+            <button id="promoButton" class="btn btn-success mb-3 mx-auto">Apply Promo</button>
+            <button id="checkoutButton" class="btn btn-primary mx-auto">Checkout</button>
+        </div>
+    </div>
+
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/all.min.js"></script>
     <script src="cart.js"></script>
+    <!-- <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("Q_Lu1dbBuc2YzfCu6");
+        })();
+    </script> -->
 </body>
+
 </html>
