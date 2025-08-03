@@ -4,7 +4,7 @@ let promoCodes = ["25", "50", "75"];
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function loadCart() {
-  const container = document.querySelector(".container");
+  const container = document.querySelector("#cartItems");
   let cartona = "";
   for (let i = 0; i < cart.length; i++) {
     cartona += `

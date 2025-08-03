@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // Toggle to show sign up form
   if (showSignUpBtn) {
     showSignUpBtn.onclick = function () {
+      showSignUpBtn.classList.remove("btn-outline-primary");
+      showSignUpBtn.classList.add("btn-primary");
+      showLoginBtn.classList.remove("btn-primary");
+      showLoginBtn.classList.add("btn-outline-primary");
       signUpContainer.style.display = "block";
       loginContainer.style.display = "none";
     };
@@ -17,6 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // Toggle to show login form
   if (showLoginBtn) {
     showLoginBtn.onclick = function () {
+      showLoginBtn.classList.remove("btn-outline-primary");
+      showLoginBtn.classList.add("btn-primary");
+      showSignUpBtn.classList.remove("btn-primary");
+      showSignUpBtn.classList.add("btn-outline-primary");
       signUpContainer.style.display = "none";
       loginContainer.style.display = "block";
     };

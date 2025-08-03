@@ -1,8 +1,16 @@
-#checkoutContainer {
-    width: 25%;
-    background-color: #e9ecef;
-}
-#cartItems {
-    width: 75%;
-    background-color: #f8f9fa;
-}
+  #checkoutContainer {
+      width: 25%;
+      background-color: #e9ecef;
+      padding: 20px;
+      border-radius: 8px;
+  }
+
+  #cartItems {
+      width: 75%;
+      background-color: #f8f9fa;
+  }
+
+  .cart-section {
+      display: flex;
+      gap: 20px;
+  }

@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cart</title>
+    <title>Home</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/all.min.css">
-    <link rel="stylesheet" href="cart.css">
-    <link rel="stylesheet" href="../products/products.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
     <nav class="navbar navbar-light bg-light border-bottom py-3 mb-3">
     <div class="container d-flex justify-content-between align-items-center">
@@ -20,46 +18,38 @@
         </a>
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link" href="../home/home.html">Home</a>
+            <a class="nav-link active" href="home.html">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../products/products.html">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#" id="cartButton">Cart</a>
+            <a class="nav-link" href="../cart/cart.html">Cart</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../orders/orders.html">Orders</a>
           </li>
         </ul>
-
+  
               <a href="../auth/auth.html" class="btn btn-outline-danger"><i class="fas fa-right-from-bracket"></i>Logout</a>
     </div>
     </nav>
 
-      <div class="container cart-section">
-    <div id="cartItems" class="row gx-4 gy-4"></div>
-    <div id="checkoutContainer" class="d-flex flex-column align-items-center">
-      <h2 class="text-center mb-4">Checkout</h2>
-      <h5 class="subtotal mb-3 text-center"></h5>
-      <div class="form-floating mb-3 w-100">
-        <input type="text" class="form-control" id="promoCode" placeholder="Promo Code" />
-        <label for="promoCode">Promo Code</label>
-      </div>
-      <button id="promoButton" class="btn btn-success w-100 mb-2">Apply Promo</button>
-      <button id="checkoutButton" class="btn btn-primary w-100">Checkout</button>
+    <div class="container">
+    <div class="row mt-5">
+        <img src="../images/welcome.jpg" alt="Welcome to NovaCart" class="img-fluid mb-4">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-center mb-4">Welcome to NovaCart</h1>
+            <p class="text-center">Your one-stop shop for all your needs. Explore our wide range of products and enjoy a seamless shopping experience.</p>
+            <div class="text-center mt-4">
+                <a href="../products/products.html" class="btn btn-primary btn-lg">Shop Now</a>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
 
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/all.min.js"></script>
-    <script src="cart.js"></script>
-    <!-- <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        (function () {
-            emailjs.init("Q_Lu1dbBuc2YzfCu6");
-        })();
-    </script> -->
+    <script src="home.js"></script>
 </body>
-
 </html>
